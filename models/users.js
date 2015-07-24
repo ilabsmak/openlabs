@@ -1,4 +1,5 @@
 module.exports = {
+<<<<<<< HEAD
 	add_user: function(query){
 	var pg = require('pg');
 	var conString = "postgres://postgres:ilabsx@10.120.5.243/stuff";
@@ -72,3 +73,20 @@ module.exports = {
 
 	}
 }
+=======
+	add_user: function(){
+		return 0;
+	},
+	get_user: function(){
+		return 0;
+	}
+
+	get_users: function(){
+		return 0;
+	}
+
+	del_user: function(){
+		return 0;
+	}
+};
+>>>>>>> 264b1aa44126b8a2f1c157603d3d57fcf896b6e6
