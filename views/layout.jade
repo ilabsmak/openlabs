@@ -8,5 +8,26 @@ html
     script(src='/js/jquery.min.js')
     script(src='/bootstrap/js/bootstrap.min.js')
     script(src='/js/script.js')
+
   body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='#') OpenLabs
+        div
+          ul.nav.navbar-nav
+          //
+            li.active
+              a(href='/') Home
+            li
+              a(href='#') Staff
+            li
+              a(href='/about') About
+            li
+              a(href='Contacts') Reach Us  
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.btn.btn-info.btn(href='/login', role='button') Login
+            li
+              a.btn.btn-info.btn(href='/register', role='button') Register
     block content

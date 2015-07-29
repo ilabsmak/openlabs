@@ -1,0 +1,23 @@
+extends layout
+
+block content
+ .container
+      .row
+        .col-md-6.col-lg-8(style='background-color: #dedef8;\
+        //box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;')
+         
+        .col-md-6.col-lg-4(style='background-color: #dedef8;\
+        //box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;')
+         h2 Sign in
+         form(role='form')
+          .form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='Enter email')
+          .form-group
+            label(for='pwd') Password:
+            input#pwd.form-control(type='password', placeholder='Enter password')
+          .checkbox
+            label
+              input(type='checkbox')
+              |  Remember me
+          button.btn.btn-default(type='submit') Submit
