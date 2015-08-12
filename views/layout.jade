@@ -13,21 +13,16 @@ html
     nav.navbar.navbar-default
       .container-fluid
         .navbar-header
-          a.navbar-brand(href='#') OpenLabs
-        div
-          ul.nav.navbar-nav
-          //
+          a.navbar-brand(href='/') OpenLabs
+        div.collapse.navbar-collapse#mobile
+          ul.nav.navbar-nav          
             li.active
-              a(href='/') Home
-            li
-              a(href='#') Staff
+              a(href='/') Home        
             li
               a(href='/about') About
             li
               a(href='Contacts') Reach Us  
-          ul.nav.navbar-nav.navbar-right
-            li
-              a.btn.btn-info.btn(href='/login', role='button') Login
-            li
-              a.btn.btn-info.btn(href='/register', role='button') Register
+          div.pull-right     
+            a.btn.btn-info(href='/login', role='button') Login       
+            a.btn.btn-info(href='/register', role='button') Register
     block content
