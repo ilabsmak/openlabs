@@ -10,19 +10,23 @@ html
     script(src='/js/script.js')
 
   body
-    nav.navbar.navbar-default
+    nav.navbar.navbar-default.navbar-other
       .container-fluid
         .navbar-header
-          a.navbar-brand(href='/') OpenLabs
+          a.navbar-brand(href='/')
+            img.logo(src='/img/logo_bg.png')
         div.collapse.navbar-collapse#mobile
-          ul.nav.navbar-nav          
-            li.active
-              a(href='/') Home        
-            li
-              a(href='/about') About
-            li
-              a(href='Contacts') Reach Us  
-          div.pull-right     
-            a.btn.btn-info(href='/login', role='button') Login       
-            a.btn.btn-info(href='/register', role='button') Register
+          ul.nav.navbar-nav.navbar-right  
+            if session.user
+              li.dropdown
+                a(href='/', data-toggle='dropdown') !{session.user['firstname']+' '+' '+session.user['lastname']}
+                  span.caret
+                ul.dropdown-menu(role='menu')
+                  li
+                    a(href='logout') Logout
+            else
+              li
+                a(href='/login') Login
+              li
+                a(href='/register') Register
     block content

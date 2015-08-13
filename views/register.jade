@@ -2,37 +2,53 @@ extends layout
 
 block content
 	.container
-		form(role='form')
-			.row
-				.col-md-6.col-lg-4(style='background-color: #dedef8;') 
-					label(for='firstname') First name:
-					input.form-control(type='text', placeholder='First name', name='firstname')
-					label(for='lastname') Last name:
-					input.form-control(type='text', placeholder='Last name', name='lastname')
-					label(for='email') Email:
-					input.form-control(type='email', placeholder='Enter email', name='email')
-					label(for='pwd') Password:
-					input.form-control(type='password', placeholder='Enter password', name='password')
-					label(for='pwd') Password:
-					input.form-control(type='password', placeholder='Confirm password', name='confirm')
+		.register-form
+			h3 Register
+			if message
+				div.alert.alert-danger= message
+			form(role='form',method='POST',action='')
+				.row
+					.col-md-4
+						div.form-group
+							label(for='firstname') First name
+							input.form-control(type='text', placeholder='First name', name='firstname' required)
+						div.form-group
+							label(for='lastname') Last name
+							input.form-control(type='text', placeholder='Last name', name='lastname' required)
+						div.form-group
+							label(for='email') Email
+							input.form-control(type='email', placeholder='Enter email', name='email' required)
+						div.form-group
+							label(for='pwd') Password
+							input.form-control(type='password', placeholder='Enter password', name='password', minLength=6, required)
+						div.form-group
+							label(for='pwd') Confirm Password
+							input.form-control(type='password', placeholder='Confirm password', name='confirm')
 
-				.col-md-6.col-lg-4(style='background-color: #dedef8;')
-					<label for="usr">Gender:</label>
-					select.form-control(name='Gender')
-						option(value='female') Female
-						option(value='male') Male
-					<label for="usr">Birthday:</label>
-					<input type="text" class="form-control" id="usr">
-					label(for='profession') Profession:
-					input.form-control(type='text', placeholder='profession', name='profession')
-					label(for='affiliation') Institution/Organization:
-					input.form-control(type='text', placeholder='institution', name='affiliation')
-					<label for="usr">Country:</label>
-					select.form-control(name='country')
-						option(value='uganda') Uganda
-						option(value='kenya') Kenya
+					.col-md-4
+						div.form-group
+							label(for="gender") Gender
+							select.form-control(name='gender')
+								option(value='female') Female
+								option(value='male') Male
+						div.form-group
+							label(for="birthday") Birthday
+							input.form-control(type='date', placeholder='Birthday', name='birthday')
+						div.form-group
+							label(for='profession') Profession
+							input.form-control(type='text', placeholder='profession', name='profession', required)
+						div.form-group
+							label(for='affiliation') Institution/Organization:
+							input.form-control(type='text', placeholder='institution', name='affiliation', required)
+						div.form-group
+							<label for="usr">Country:</label>
+							select.form-control(name='country')
+								option(value='uganda') Uganda
+								option(value='kenya') Kenya
 
-				.col-md-6.col-lg-4(style='background-color: #dedef8;')
-					label(for='comment') Bio(Optional):
-					textarea#comment.form-control(rows='5')
-					button.btn.btn-default.btn-block(type='submit') Register
+					.col-md-4
+						div.form-group
+							label(for='comment') Bio(Optional):
+							textarea.form-control(rows='13', name='bio')
+						div.form-group
+							button.btn.btn-success.btn-block(type='submit') Register

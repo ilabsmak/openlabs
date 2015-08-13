@@ -1,3 +1,82 @@
+*{
+    border-radius: 0px !important;
+}
+
 body{
-	background: whitesmoke;
+    background-color: #FAFAFA;
+}
+
+.navbar-home{
+    /* background: none; */
+    border: none;
+    z-index: 1000;
+}
+
+.navbar-home .logo{
+    height: 120px;
+    margin-left: 50px;
+    margin-top: -20px;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-bottom-left-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+}
+
+.navbar-other .logo{
+    height: 50px;
+    margin-top: -15px;
+}
+
+.home{
+    background: url('../img/background.jpg') center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    margin-top: -70px;
+    position: relative;
+}
+
+.home .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(62, 84, 210, 0.34);
+}
+
+.login-form {
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #CCC;
+    margin-top: 60px;
+}
+
+.login-form h3{
+    display: block;
+    text-align: center;
+    padding-bottom: 15px;
+    margin: 0 -20px 15px;
+    border-bottom: solid 1px #DDD;
+}
+
+.register-form {
+    background-color: #FFF;
+    padding: 20px;
+    box-shadow: 0px 0px 3px #CCC;
+    margin-top: 40px;
+}
+
+.register-form h3{
+    display: block;
+    text-align: center;
+    padding-bottom: 15px;
+    margin: 0 -20px 15px;
+    border-bottom: solid 1px #DDD;
+}
+
+.register-form textarea{
+    height: 280px;
 }

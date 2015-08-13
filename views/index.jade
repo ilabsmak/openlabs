@@ -1,5 +1,33 @@
-extends layout
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
 
-block content
-  h1= title
-  p Welcome to #{title}
+		script(src='/js/jquery.min.js')
+		script(src='/bootstrap/js/bootstrap.min.js')
+		script(src='/js/script.js')
+
+	body
+		nav.navbar.navbar-default.navbar-home
+			.container-fluid
+				.navbar-header
+					a.navbar-brand(href='/')
+						img.logo(src='/img/logo.png')
+				div.collapse.navbar-collapse#mobile
+					ul.nav.navbar-nav.navbar-right
+						if session.user
+							li.dropdown
+								a(href='/', data-toggle='dropdown') !{session.user['firstname']+' '+' '+session.user['lastname']}
+									span.caret
+								ul.dropdown-menu(role='menu')
+									li
+										a(href='logout') Logout
+						else
+							li
+								a(href='/login') Login
+							li
+								a(href='/register') Register
+		div.home
+			div.overlay
