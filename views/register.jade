@@ -20,10 +20,12 @@ block content
 							input.form-control(type='email', placeholder='Enter email', name='email' required)
 						div.form-group
 							label(for='pwd') Password
-							input.form-control(type='password', placeholder='Enter password', name='password', minLength=6, required)
+							input.form-control(type='password', placeholder='Enter password', name='password', id="pass1", minLength=6, required)
 						div.form-group
 							label(for='pwd') Confirm Password
-							input.form-control(type='password', placeholder='Confirm password', name='confirm')
+							input.form-control(type='password', placeholder='Confirm password', name='confirm', id="pass2", onkeyup="checkPass(); return false;")
+							span#confirmMessage.confirmMessage
+
 
 					.col-md-4
 						div.form-group

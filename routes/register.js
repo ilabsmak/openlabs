@@ -6,6 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('register', { title: 'register' });
 });
 
+
+
+
 router.post('/' function(req, res, next){
 	var firstname 	= req.body.firstname;
 	var lastname 	= req.body.lastname;
@@ -21,3 +24,4 @@ router.post('/' function(req, res, next){
 });
 
 module.exports = router;
+
