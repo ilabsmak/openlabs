@@ -1,56 +1,79 @@
-extends layout
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/bootstrap-datepicker/css/bootstrap-datepicker.min.css')
+		link(rel='stylesheet', href='/css/style.css')
 
-block content
-	.container
-		.register-form
-			h3 Register
-			if message
-				div.alert.alert-danger= message
-			form(role='form',method='POST',action='')
-				.row
-					.col-md-4
-						div.form-group
-							label(for='firstname') First name
-							input.form-control(type='text', placeholder='First name', name='firstname' required)
-						div.form-group
-							label(for='lastname') Last name
-							input.form-control(type='text', placeholder='Last name', name='lastname' required)
-						div.form-group
-							label(for='email') Email
-							input.form-control(type='email', placeholder='Enter email', name='email' required)
-						div.form-group
-							label(for='pwd') Password
-							input.form-control(type='password', placeholder='Enter password', name='password', id="pass1", minLength=6, required)
-						div.form-group
-							label(for='pwd') Confirm Password
-							input.form-control(type='password', placeholder='Confirm password', name='confirm', id="pass2", onkeyup="checkPass(); return false;")
-							span#confirmMessage.confirmMessage
+		script(src='/js/jquery.min.js')
+		script(src='/bootstrap/js/bootstrap.min.js')
+		script(src='/bootstrap-datepicker/js/bootstrap-datepicker.min.js')
+		script(src='/js/script.js')
+
+	body
+		nav.navbar.navbar-default.navbar-home
+			.container-fluid
+				.navbar-header
+				a.navbar-brand(href='/')
+					img.logo(src='/img/logo.png')
+				div.collapse.navbar-collapse#mobile
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href='/login') Login
+						li
+							a(href='/register') Register
+	.container-fluid.register.cover
+		.row
+			div.col-md-10.col-md-offset-1.register-form
+				h3 Register
+				if message
+					div.alert.alert-danger= message
+				form(role='form',method='POST',action='')
+					.row
+						.col-md-4
+							div.form-group
+								label(for='firstname') First name
+								input.form-control(type='text', placeholder='First name', name='firstname' required)
+							div.form-group
+								label(for='lastname') Last name
+								input.form-control(type='text', placeholder='Last name', name='lastname' required)
+							div.form-group
+								label(for='email') Email
+								input.form-control(type='email', placeholder='Enter email', name='email' required)
+							div.form-group
+								label(for='pwd') Password
+								input.form-control(type='password', placeholder='Enter password', name='password', id="pass1", minLength=6, required)
+							div.form-group
+								label(for='pwd') Confirm Password
+								input.form-control(type='password', placeholder='Confirm password', name='confirm', id="pass2", onkeyup="checkPass(); return false;")
+								span#confirmMessage.confirmMessage
 
 
-					.col-md-4
-						div.form-group
-							label(for="gender") Gender
-							select.form-control(name='gender')
-								option(value='female') Female
-								option(value='male') Male
-						div.form-group
-							label(for="birthday") Birthday
-							input.form-control.datepicker(type='text', name='birthday')
-						div.form-group
-							label(for='profession') Profession
-							input.form-control(type='text', placeholder='profession', name='profession', required)
-						div.form-group
-							label(for='affiliation') Institution/Organization:
-							input.form-control(type='text', placeholder='institution', name='affiliation', required)
-						div.form-group
-							<label for="usr">Country:</label>
-							select.form-control(name='country')
-								option(value='uganda') Uganda
-								option(value='kenya') Kenya
+						.col-md-4
+							div.form-group
+								label(for="gender") Gender
+								select.form-control(name='gender')
+									option(value='female') Female
+									option(value='male') Male
+							div.form-group
+								label(for="birthday") Birthday
+								input.form-control.datepicker(type='text', name='birthday')
+							div.form-group
+								label(for='profession') Profession
+								input.form-control(type='text', placeholder='profession', name='profession', required)
+							div.form-group
+								label(for='affiliation') Institution/Organization:
+								input.form-control(type='text', placeholder='institution', name='affiliation', required)
+							div.form-group
+								<label for="usr">Country:</label>
+								select.form-control(name='country')
+									option(value='uganda') Uganda
+									option(value='kenya') Kenya
 
-					.col-md-4
-						div.form-group
-							label(for='comment') Bio(Optional):
-							textarea.form-control(rows='13', name='bio')
-						div.form-group
-							button.btn.btn-success.btn-block(type='submit') Register
+						.col-md-4
+							div.form-group
+								label(for='comment') Bio(Optional):
+								textarea.form-control(rows='13', name='bio')
+							div.form-group
+								button.btn.btn-success.btn-block(type='submit') Register

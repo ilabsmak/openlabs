@@ -9,6 +9,7 @@ var session = require('express-session')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var groups = require('./routes/groups');
 /*var register = require('./routes/register');
 var login = require('./routes/login');*/
 
@@ -29,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
 app.use('/', routes);
+app.use('/groups*', groups);
+app.use('/groups', groups);
 /*app.use('/users', users);
 app.use('/register', users);
 app.use('/login', users);*/

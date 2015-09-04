@@ -6,6 +6,10 @@ body{
     background-color: #FAFAFA;
 }
 
+/**********Material Icon Overrides****************/
+.btn i.material-icons{
+}
+
 .navbar-home{
     /* background: none; */
     border: none;
@@ -27,17 +31,42 @@ body{
     margin-top: -15px;
 }
 
-.home{
-    background: url('../img/background.jpg') center center no-repeat;
+.navbar a{
+    height: 50px;
+}
+
+.navbar li ul a{
+    height: auto;
+}
+
+.navbar a.user{
+    width: 40px;
+    background: url('../icons/user.png') center center no-repeat;
+}
+
+.cover{
+    background-position: center;
+    background-repeat: no-repeat;;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    margin-top: -70px;
     position: relative;
+    margin-top: -70px;
 }
 
+.home{
+    background-image: url('../img/background.jpg');
+}
+.login{
+    background-image: url('../img/background.jpg');
+    padding-top: 80px;
+}
+.register{
+    background-image: url('../img/background.jpg');
+    padding-top: 80px;
+}
 .home .overlay{
     position: absolute;
     height: 100%;
@@ -79,4 +108,43 @@ body{
 
 .register-form textarea{
     height: 280px;
+}
+
+.menu{
+    height: calc(100vh - 100px);
+    overflow: auto;
+    /* background: #FFF; */
+    /* box-shadow: 0 0 3px 0px #333; */
+}
+
+.menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li{
+    /*border-bottom: solid 1px #DDD;*/
+}
+
+.menu li a{
+    display: block;
+    padding: 15px 15px;
+    color: #767676;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.menu li a:hover{
+    background-color: #EFEFEF;
+}
+.menu li a i{
+    font-size: 22px;
+    width: 45px;
+}
+
+.content{
+    background-color: #FFFFFF;
+    box-shadow: 0 0 3px 1px #DDD;
+    min-height: calc(100vh - 100px);
 }

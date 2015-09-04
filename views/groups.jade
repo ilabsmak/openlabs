@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.container-fluid
+		.row
+			include menu.jade
+			div.col-md-8
+				.panel.panel-default
+					.panel-heading
+						h3.panel-title Groups
+							.pull-right
+								a.btn.btn-xs.btn-default(href='/groups/add')
+									i.material-icons add_circle
+					ul.list-group
+						li.list-group-item Cras justo odio

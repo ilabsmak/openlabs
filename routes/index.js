@@ -8,7 +8,12 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.locals.session = req.session;
-	res.render('index', { title: 'OpenLabs' });
+	var user = req.session.user;
+	if(!req.session.user){
+		res.render('index', { title: 'Home' });
+	}else{
+		res.render('home', { title: 'Dashboard' });
+	}
 });
 
 router.get('/login', function(req, res, next) {

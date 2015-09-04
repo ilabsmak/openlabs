@@ -13,21 +13,13 @@ html
 		nav.navbar.navbar-default.navbar-home
 			.container-fluid
 				.navbar-header
-					a.navbar-brand(href='/')
-						img.logo(src='/img/logo.png')
+				a.navbar-brand(href='/')
+					img.logo(src='/img/logo.png')
 				div.collapse.navbar-collapse#mobile
 					ul.nav.navbar-nav.navbar-right
-						if session.user
-							li.dropdown
-								a(href='/', data-toggle='dropdown') !{session.user['firstname']+' '+' '+session.user['lastname']}
-									span.caret
-								ul.dropdown-menu(role='menu')
-									li
-										a(href='logout') Logout
-						else
-							li
-								a(href='/login') Login
-							li
-								a(href='/register') Register
-		div.home
+						li
+							a(href='/login') Login
+						li
+							a(href='/register') Register
+		div.home.cover
 			div.overlay
